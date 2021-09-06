@@ -1,0 +1,85 @@
+{
+// 5.
+/*
+  tsconfig.json是ts编译器的配置文件，ts编译器可以根据它的信息来对代码进行编译
+    "include" 用来指定哪些ts文件需要被编译
+      路径：** 表示任意目录
+            * 表示任意文件
+    "exclude" 不需要被编译的文件目录
+        默认值：["node_modules", "bower_components", "jspm_packages"]
+
+*/
+
+  "include": [
+    "./src/**/*"  // 表示的根目录下的scr目录下的任意目录下的任意文件
+  ],
+//  "exclude": [
+//    "./src/hello/**/*"
+//  ]
+
+// extends
+// files
+
+// 6.
+  /*
+    compilerOptions 编译器的选项
+  */
+  "compilerOptions": {
+
+    // target 用来指定ts被编译为的ES的版本  默认转换为es3版本
+    // 'es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'esnext'
+    "target": "es2015",
+    // module 指定要使用的模块化的规范    "模块化"   es2015表示es6
+    // 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'
+    "module": "es2015",
+    // lib用来指定项目中要使用的库，
+    // 正常情况下不需要使用代码不是在浏览器的环境下运行的，在node里面运行没有dom，需要使用
+    //'es5', 'es6', 'es2015', 'es7', 'es2016', 'es2017', 'es
+    //2018', 'es2019', 'es2020', 'esnext', 'dom', 'dom.iterable', 'webworker', 'webworker.importscripts', 'webworker.iterable', 'scri
+    //pthost', 'es2015.core', 'es2015.collection', 'es2015.generator', 'es2015.iterable', 'es2015.promise', 'es2015.proxy', 'es2015.r
+    //eflect', 'es2015.symbol', 'es2015.symbol.wellknown', 'es2016.array.include', 'es2017.object', 'es2017.sharedmemory', 'es2017.st
+    //ring', 'es2017.intl', 'es2017.typedarrays', 'es2018.asyncgenerator', 'es2018.asynciterable', 'es2018.intl', 'es2018.promise', '
+    //es2018.regexp', 'es2019.array', 'es2019.object', 'es2019.string', 'es2019.symbol', 'es2020.bigint', 'es2020.promise', 'es2020.s
+    //haredmemory', 'es2020.string', 'es2020.symbol.wellknown', 'es2020.intl', 'esnext.array', 'esnext.symbol', 'esnext.asynciterable
+    //', 'esnext.intl', 'esnext.bigint', 'esnext.string', 'esnext.promise', 'esnext.weakref'
+//    "lib": ["es6", "dom"]
+
+
+    // outDir 用来指定编译后文件所在的目录
+    "outDir": "./dist",
+
+    // outFile，所有的全局作用域中的代码会合并到同一个文件中
+    //"outFile": "./dist/app.js" 编译后的文件里的代码合并到app.js中
+    // 注意在合并的时候，模块化的不同 "module" :"system", 
+
+    // 是否对js文件进行编译，默认是false    因为有一些模块是用JS来写的
+//    "allowJs": true,
+    // 是否检查js代码是否符合语法规范，默认是false    因为对js文件进行编译的时候，需要检查代码是否规范
+//    "checkJs": true,
+    // 是否移除注释
+    "removeComments": true,
+    // 不生成编译后的文件  默认值flase
+    "noEmit": false,
+    // 当有错误时不生成编译后的文件   比如checkJS 出错误后就不编译
+    "noEmitOnError": true,
+
+
+
+    // 所有严格检查的总开关
+    "strict": true,
+
+    // 用来设置编译后的文件是否使用严格模式，默认false
+    "alwaysStrict": true,
+
+    // 不允许隐式的any类型   防止function fn(a,b){} 不指明a，b的类型，默认any
+    "noImplicitAny": true,
+
+    // 不允许不明确类型的this    指定好this的类型  function fn2(this:any){ alert(this); }
+    "noImplicitThis": true,
+
+    // 严格的检查空值
+    "strictNullChecks": true
+
+
+  }
+}

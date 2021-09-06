@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2015",
+    "strict": true,
+    "outDir": "./dist",  // 输出的位置
+    "noEmitOnError": true  // 表示有错误的时候不去编译
+  },
+  "include": [
+    "./src/**/*"  // 输入的文件位置
+  ]
+}
